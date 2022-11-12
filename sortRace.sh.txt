@@ -1,0 +1,8 @@
+ulimit -s 6194304	#sets the stack memmory for the terminal to 4mb 
+c++ generate.cpp -o generate
+c++ mySort.cpp -o mySort
+c++ verifySort.cpp -o verifSort
+./generate 1000000 100000 999999
+time sort numbers.txt > sysSort.out
+time ./mySort numbers.txt sorted.txt
+./verifySort sorted.txt
